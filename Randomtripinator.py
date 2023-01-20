@@ -27,57 +27,51 @@ trip_entertainment = ['Hiking', 'Shopping', 'Shrining',' Fishing','Surfing']
 
 
 # Randomators
-destination = random.choice(trip_destinations)
-restaurant = random.choice(trip_restaurants)
-transportation = random.choice(trip_transport)
-entertainment = random.choice(trip_entertainment)
+# destination = random.choice(trip_destinations)
+# restaurant = random.choice(trip_restaurants)
+# transportation = random.choice(trip_transport)
+# entertainment = random.choice(trip_entertainment)
 
-confirm = input('Please type y to start and y/n to confirm your travel option. ')
+confirm = input('Please type n to start and y/n to confirm your travel option. ')
 
 # Function for destination
 def new_destie(confirm):  
-    while confirm == 'y':
+    while confirm == 'n':
             destination = random.choice(trip_destinations)
-            confirm = input(f'We have seleceted {destination} as your trip destination. Would you prefer to travel somewhere else?(y/n) ')
-    if confirm == 'y':
-        True
-    else:
-        print(f'Glad you selected {destination} as the destination for your trip. ')
+            confirm = input(f'We have seleceted {destination} as your trip destination. Do you like this location for your trip? (y/n) ')
+   
+    print(f'Glad you selected {destination} as the destination for your trip. ')
+    return destination
 
-new_destie(confirm)
+destination = new_destie(confirm)
 
 def foodie_yum(confirm):  
-    while confirm == 'y':
+    while confirm == 'n':
             restaurant = random.choice(trip_restaurants)
-            confirm = input(f'We have seleceted {restaurant} as your place to grab a bite. Would you prefer a different local restaurant?(y/n) ')
-    if confirm == 'y':
-        True
-    else:
-        print(f'YUM! Glad you selected {restaurant} as the restaurant for your trip. ')
+            confirm = input(f'We have seleceted {restaurant} as your place to grab a bite. Do you want to try a different place to fill your belly? (y/n) ')
+    
+    print(f'YUM! Glad you selected {restaurant} as the restaurant for your trip. ')
+    return restaurant
 
-foodie_yum(confirm)
+restaurant = foodie_yum(confirm)
 
 def lift_glide(confirm):
-    while confirm == 'y':
+    while confirm == 'n':
             transportation = random.choice(trip_transport)
-            confirm = input(f'We have seleceted {transportation} as your mode of transportation. would you prefer something else?(y/n) ')
-    if confirm == 'y':
-        True
-    else:
-        print(f'Zoom! Glad you selected {transportation} as the method of movement for your trip. ')
-
-lift_glide(confirm)
+            confirm = input(f'We have seleceted {transportation} as your mode of transportation. Will you enjoy this method of movement for your trip?(y/n) ')
+   
+    print(f'Zoom! Glad you selected {transportation} as the method of movement for your trip. ')
+    return transportation
+transportation =  lift_glide(confirm)
 
 def entertain(confirm):
-    while confirm == 'y':
+    while confirm == 'n':
             entertainment = random.choice(trip_entertainment)
-            confirm = input(f'We have seleceted {entertainment} as your option for fun on the trip. would you prefer to do something else?(y/n) ')
-    if confirm == 'y':
-        True
-    else:
-        print(f'PARTY ROCKING IN THE HOUSE TONIGHT! Glad you selected {entertainment} as your choice of entertainment! ')
-
-entertain(confirm)
+            confirm = input(f'We have seleceted {entertainment} as your option for fun on the trip. Is this an fun option for your trip? (y/n) ')
+   
+    print(f'PARTY ROCKING IN THE HOUSE TONIGHT! Glad you selected {entertainment} as your choice of entertainment! ')
+    return entertainment
+entertainment = entertain(confirm)
 
 print(f'Enjoy your trip to {destination} we hope the food is to your liking at {restaurant}. Do not forget to grab your pass for the {transportation} on your way to go {entertainment}.')
 

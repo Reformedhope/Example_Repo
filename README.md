@@ -1,3 +1,3 @@
 # Example_Repo
 
-Stephanie's fitst Repo
+Stephanie's first Repo
